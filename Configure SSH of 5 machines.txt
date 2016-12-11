@@ -1,44 +1,44 @@
-ÅäÖÃÒÔÏÂ5Ì¨»úÆ÷rootÓÃ»§µÄÏà»¥ĞÅÈÎ¹ØÏµ:
+é…ç½®ä»¥ä¸‹5å°æœºå™¨rootç”¨æˆ·çš„ç›¸äº’ä¿¡ä»»å…³ç³»:
 sht-sgmhadoopnn-01
 sht-sgmhadoopnn-02
 sht-sgmhadoopdn-01
 sht-sgmhadoopdn-02
 sht-sgmhadoopdn-03
 
-1.É¾³ı~/.ssh
+1.åˆ é™¤~/.ssh
 [root@sht-sgmhadoopnn-01 ~]# rm -rf ~/.ssh
 [root@sht-sgmhadoopnn-02 ~]# rm -rf ~/.ssh
 [root@sht-sgmhadoopdn-01 ~]# rm -rf ~/.ssh
 [root@sht-sgmhadoopdn-02 ~]# rm -rf ~/.ssh
 [root@sht-sgmhadoopdn-03 ~]# rm -rf ~/.ssh
 
-2.Éú³É.sshÄ¿Â¼
+2.ç”Ÿæˆ.sshç›®å½•
 [root@sht-sgmhadoopnn-01 ~]# ssh-keygen
 [root@sht-sgmhadoopnn-02 ~]# ssh-keygen
 [root@sht-sgmhadoopdn-01 ~]# ssh-keygen
 [root@sht-sgmhadoopdn-02 ~]# ssh-keygen
 [root@sht-sgmhadoopdn-03 ~]# ssh-keygen
 
-3.Ñ¡È¡sht-sgmhadoopnn-01,Éú³Éauthorized_keysÎÄ¼ş
+3.é€‰å–sht-sgmhadoopnn-01,ç”Ÿæˆauthorized_keysæ–‡ä»¶
 [root@sht-sgmhadoopnn-01 ~]# cd .ssh
 [root@sht-sgmhadoopnn-01 .ssh]# cat /root/.ssh/id_rsa.pub>> /root/.ssh/authorized_keys 
 
-4.½«ÆäËûËÄÌ¨µÄid_rsa.pubÎÄ¼ş,sshµ½sht-sgmhadoopnn-01µÄ.sshÄ¿Â¼ÖĞ
+4.å°†å…¶ä»–å››å°çš„id_rsa.pubæ–‡ä»¶,sshåˆ°sht-sgmhadoopnn-01çš„.sshç›®å½•ä¸­
 [root@sht-sgmhadoopnn-02 ~]# ssh ~/.ssh/id_rsa.pub root@sht-sgmhadoopnn-01:/root/.ssh/pub.1
 [root@sht-sgmhadoopdn-01 ~]# ssh ~/.ssh/id_rsa.pub root@sht-sgmhadoopnn-01:/root/.ssh/pub.2
 [root@sht-sgmhadoopdn-02 ~]# ssh ~/.ssh/id_rsa.pub root@sht-sgmhadoopnn-01:/root/.ssh/pub.3
 [root@sht-sgmhadoopdn-03 ~]# ssh ~/.ssh/id_rsa.pub root@sht-sgmhadoopnn-01:/root/.ssh/pub.4
 
-5.½«pub.* ÎÄ¼şÄÚÈİÊä³öµ½ authorized_keys
+5.å°†pub.* æ–‡ä»¶å†…å®¹è¾“å‡ºåˆ° authorized_keys
 [root@sht-sgmhadoopnn-01 .ssh]# cat pub.* >> /root/.ssh/authorized_keys
 
-6.½«sht-sgmhadoopnn-01µÄauthorized_keys scp ¸øÆäËûËÄÌ¨(µÚÒ»´Î´«Êä,ĞèÒªÊäÈëÃÜÂë)
+6.å°†sht-sgmhadoopnn-01çš„authorized_keys scp ç»™å…¶ä»–å››å°(ç¬¬ä¸€æ¬¡ä¼ è¾“,éœ€è¦è¾“å…¥å¯†ç )
 [root@sht-sgmhadoopnn-01 .ssh]#  scp authorized_keys root@sht-sgmhadoopnn-02:/root/.ssh
 [root@sht-sgmhadoopnn-01 .ssh]#  scp authorized_keys root@sht-sgmhadoopdn-01:/root/.ssh
 [root@sht-sgmhadoopnn-01 .ssh]#  scp authorized_keys root@sht-sgmhadoopdn-02:/root/.ssh
 [root@sht-sgmhadoopnn-01 .ssh]#  scp authorized_keys root@sht-sgmhadoopdn-03:/root/.ssh
 
-7.ÑéÖ¤(Ã¿Ì¨»úÆ÷ÉÏÖ´ĞĞÏÂÃæ5ÌõÃüÁî,Ö»ÊäÈëyes,²»ÊäÈëÃÜÂë,ÔòÕâ5Ì¨»¥ÏàÍ¨ĞÅÁË)
+7.éªŒè¯(æ¯å°æœºå™¨ä¸Šæ‰§è¡Œä¸‹é¢5æ¡å‘½ä»¤,åªè¾“å…¥yes,ä¸è¾“å…¥å¯†ç ,åˆ™è¿™5å°äº’ç›¸é€šä¿¡äº†)
 ssh root@sht-sgmhadoopnn-01 date
 ssh root@sht-sgmhadoopnn-02 date
 ssh root@sht-sgmhadoopdn-01 date
@@ -48,5 +48,5 @@ ssh root@sht-sgmhadoopdn-03 date
      
 
 
-±¸×¢:
-¼ÇÂ¼Ò»´Î°ïÍøÓÑµ÷ÊÔsshĞÅÈÎ¹ØÏµµÄ¹ı³Ì: http://blog.itpub.net/30089851/viewspace-2127102/
+å¤‡æ³¨:
+è®°å½•ä¸€æ¬¡å¸®ç½‘å‹è°ƒè¯•sshä¿¡ä»»å…³ç³»çš„è¿‡ç¨‹: http://blog.itpub.net/30089851/viewspace-2127102/
