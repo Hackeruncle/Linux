@@ -49,4 +49,4 @@ ssh root@sht-sgmhadoopdn-03 date
 
 
 8.备注:
-记录一次帮网友调试ssh信任关系的过程: http://blog.itpub.net/30089851/viewspace-2127102/
+记录一次帮网友调试ssh信任关系的过程:http://blog.itpub.net/30089851/viewspace-2127102/
